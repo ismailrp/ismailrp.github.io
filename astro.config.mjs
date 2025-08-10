@@ -7,7 +7,7 @@ import { defineConfig } from 'astro/config';
 // import github from '@astrojs/github';
 
 export default defineConfig({
-  site: 'https://username.github.io',
+  site: 'https://ismailrp.github.io',
   integrations: [],
 //   adapter: github(),
 });
