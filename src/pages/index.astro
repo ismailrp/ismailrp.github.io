@@ -1,8 +1,432 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  Welcome from here
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-200 z-50 py-4">
+    <div class="w-full px-5 flex justify-between items-center">
+      <div class="text-xl font-bold text-primary-600">Ismail</div>
+      <div class="hidden md:flex gap-8 items-center">
+        <a href="#about" class="nav-link text-gray-700 font-medium hover:text-primary-600 transition-colors" data-target="about-content">About</a>
+        <a href="#skills" class="nav-link text-gray-700 font-medium hover:text-primary-600 transition-colors" data-target="skills-content">Skills</a>
+        <a href="#experience" class="nav-link text-gray-700 font-medium hover:text-primary-600 transition-colors" data-target="experience-content">Experience</a>
+        <a href="#projects" class="nav-link text-gray-700 font-medium hover:text-primary-600 transition-colors" data-target="projects-content">Projects</a>
+        <a href="#contact" class="nav-link text-gray-700 font-medium hover:text-primary-600 transition-colors" data-target="contact-content">Contact</a>
+        <a href="/resume.pdf" class="bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors" download>Download Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="mt-20 py-12 bg-gradient-to-br from-purple-600 to-blue-600 text-white min-h-[60vh] flex items-center">
+    <div class="w-full px-5 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Hi, I'm <span class="bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent">Ismail</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-medium opacity-90">Full-Stack Data Analyst & BI Developer</h2>
+        <p class="text-lg opacity-80 leading-relaxed">
+          Transforming complex data into actionable insights through advanced analytics,
+          stunning visualizations, and robust business intelligence solutions.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects" class="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all">View My Work</a>
+          <a href="/resume.pdf" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all" download>Download Resume</a>
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="flex items-end gap-2 h-48">
+          <div class="w-10 bg-white/30 rounded animate-grow" style="height: 60%; animation-delay: 0s;"></div>
+          <div class="w-10 bg-white/30 rounded animate-grow" style="height: 80%; animation-delay: 0.2s;"></div>
+          <div class="w-10 bg-white/30 rounded animate-grow" style="height: 45%; animation-delay: 0.4s;"></div>
+          <div class="w-10 bg-white/30 rounded animate-grow" style="height: 90%; animation-delay: 0.6s;"></div>
+          <div class="w-10 bg-white/30 rounded animate-grow" style="height: 70%; animation-delay: 0.8s;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion Sections -->
+  <div class="w-full px-5 py-12 space-y-6">
+
+    <!-- About Accordion -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <button class="accordion-btn w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors" data-target="about-content">
+        <h3 class="text-xl font-semibold text-primary-600">About Me</h3>
+        <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="about-content" class="accordion-content hidden px-6 py-4 bg-white">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 space-y-4">
+            <p class="text-gray-600 leading-relaxed">
+              I'm a passionate Full-Stack Data Analyst and BI Developer with expertise in transforming
+              raw data into meaningful business insights. I bridge the gap between technical data processing
+              and strategic business decision-making.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+              With a strong foundation in both frontend and backend technologies, I create comprehensive
+              data solutions that include interactive dashboards, automated reporting systems, and
+              predictive analytics models.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 gap-4">
+            <div class="text-center p-6 bg-white rounded-lg shadow-md border border-gray-100">
+              <div class="text-3xl font-bold text-primary-600 mb-2">3+</div>
+              <div class="text-gray-600 font-medium">Years Experience</div>
+            </div>
+            <div class="text-center p-6 bg-white rounded-lg shadow-md border border-gray-100">
+              <div class="text-3xl font-bold text-primary-600 mb-2">50+</div>
+              <div class="text-gray-600 font-medium">Projects Completed</div>
+            </div>
+            <div class="text-center p-6 bg-white rounded-lg shadow-md border border-gray-100">
+              <div class="text-3xl font-bold text-primary-600 mb-2">15+</div>
+              <div class="text-gray-600 font-medium">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Accordion -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <button class="accordion-btn w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors" data-target="skills-content">
+        <h3 class="text-xl font-semibold text-primary-600">Technical Skills</h3>
+        <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="skills-content" class="accordion-content hidden px-6 py-4 bg-white">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h4 class="text-lg font-semibold text-primary-600">Data Analysis & Visualization</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Python</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">R</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">SQL</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Tableau</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Power BI</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">D3.js</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Plotly</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-lg font-semibold text-primary-600">Business Intelligence</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">ETL Processes</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Data Warehousing</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Dashboard Design</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">KPI Development</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Reporting</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-lg font-semibold text-primary-600">Full-Stack Development</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">JavaScript</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">React</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Node.js</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Express</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">MongoDB</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-lg font-semibold text-primary-600">Tools & Technologies</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Git</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Docker</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">AWS</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Excel</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Looker</span>
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary-600 hover:text-white transition-colors cursor-pointer">Apache Spark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Accordion -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <button class="accordion-btn w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors" data-target="experience-content">
+        <h3 class="text-xl font-semibold text-primary-600">Professional Experience</h3>
+        <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="experience-content" class="accordion-content hidden px-6 py-4 bg-white">
+        <div class="space-y-6">
+          <div class="relative pl-8 border-l-2 border-primary-600">
+            <div class="absolute w-4 h-4 bg-primary-600 rounded-full -left-[9px] top-0"></div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <h4 class="text-xl font-semibold text-primary-600 mb-1">Senior Data Analyst</h4>
+              <h5 class="text-gray-600 font-medium mb-2">TechCorp Solutions</h5>
+              <p class="text-primary-500 font-semibold mb-3">2022 - Present</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Led data analysis initiatives for 15+ enterprise clients</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Developed interactive dashboards reducing reporting time by 60%</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Implemented automated ETL pipelines processing 1M+ records daily</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Mentored junior analysts and established best practices</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-primary-600">
+            <div class="absolute w-4 h-4 bg-primary-600 rounded-full -left-[9px] top-0"></div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <h4 class="text-xl font-semibold text-primary-600 mb-1">BI Developer</h4>
+              <h5 class="text-gray-600 font-medium mb-2">DataInsights Inc.</h5>
+              <p class="text-primary-500 font-semibold mb-3">2020 - 2022</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Designed and deployed Power BI dashboards for executive leadership</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Optimized SQL queries improving performance by 40%</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Collaborated with stakeholders to define KPIs and metrics</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Created data models supporting real-time analytics</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative pl-8 border-l-2 border-primary-600">
+            <div class="absolute w-4 h-4 bg-primary-600 rounded-full -left-[9px] top-0"></div>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+              <h4 class="text-xl font-semibold text-primary-600 mb-1">Junior Data Analyst</h4>
+              <h5 class="text-gray-600 font-medium mb-2">StartupXYZ</h5>
+              <p class="text-primary-500 font-semibold mb-3">2019 - 2020</p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Conducted ad-hoc analysis and created monthly reports</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Built first company-wide dashboard using Tableau</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Assisted in data cleaning and preprocessing tasks</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 font-bold mt-1">✓</span>
+                  <span class="text-gray-600">Supported A/B testing and campaign analysis</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Accordion -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <button class="accordion-btn w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors" data-target="projects-content">
+        <h3 class="text-xl font-semibold text-primary-600">Featured Projects</h3>
+        <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="projects-content" class="accordion-content hidden px-6 py-4 bg-white">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+              <div class="text-6xl">📊</div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Sales Analytics Dashboard</h4>
+              <p class="text-gray-600 mb-4">Real-time sales dashboard with interactive visualizations and forecasting capabilities using Power BI and Python.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Power BI</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Python</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+              <div class="text-6xl">🔄</div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">ETL Pipeline Automation</h4>
+              <p class="text-gray-600 mb-4">Automated data pipeline processing multiple sources, reducing manual work by 80% and improving data accuracy.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Python</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Airflow</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">AWS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+              <div class="text-6xl">📈</div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Customer Segmentation Model</h4>
+              <p class="text-gray-600 mb-4">Machine learning model for customer behavior analysis and segmentation using clustering algorithms.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Python</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Scikit-learn</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Pandas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+              <div class="text-6xl">🌐</div>
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">Web Analytics Platform</h4>
+              <p class="text-gray-600 mb-4">Full-stack web application for real-time analytics with custom dashboards and reporting features.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">React</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">Node.js</span>
+                <span class="px-2 py-1 bg-primary-100 text-primary-600 rounded text-sm font-medium">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Accordion -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden">
+      <button class="accordion-btn w-full px-6 py-4 bg-gray-50 hover:bg-gray-100 flex justify-between items-center transition-colors" data-target="contact-content">
+        <h3 class="text-xl font-semibold text-primary-600">Get In Touch</h3>
+        <svg class="w-5 h-5 text-gray-500 transform transition-transform accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="contact-content" class="accordion-content hidden px-6 py-4 bg-white">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <p class="text-gray-600 leading-relaxed">
+              I'm always interested in new opportunities and collaborations.
+              Whether you have a project in mind or just want to connect,
+              feel free to reach out!
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">📧</span>
+                <a href="mailto:ismail.rintoprasetio@gmail.com" class="text-primary-600 font-medium hover:text-primary-700">ismail.rintoprasetio@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">📄</span>
+                <a href="/resume.pdf" class="text-primary-600 font-medium hover:text-primary-700" download>Download My Resume</a>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+            <form class="space-y-4">
+              <div>
+                <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+              </div>
+              <div>
+                <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+              </div>
+              <div>
+                <textarea placeholder="Your Message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-5 text-center">
+      <p>&copy; 2024 Ismail Rinto Prasetio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Accordion and navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const accordionBtns = document.querySelectorAll('.accordion-btn');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      // Accordion button functionality
+      accordionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const target = document.getElementById(this.dataset.target);
+          const icon = this.querySelector('.accordion-icon');
+          const isExpanded = !target.classList.contains('hidden');
+
+          // Close all accordions
+          document.querySelectorAll('.accordion-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          document.querySelectorAll('.accordion-icon').forEach(ic => {
+            ic.classList.remove('rotate-180');
+          });
+
+          // Open clicked accordion if it was closed
+          if (!isExpanded) {
+            target.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+
+      // Navigation link functionality
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.dataset.target;
+          const target = document.getElementById(targetId);
+          const targetAccordion = target.closest('.border');
+
+          // Close all accordions first
+          document.querySelectorAll('.accordion-content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          document.querySelectorAll('.accordion-icon').forEach(icon => {
+            icon.classList.remove('rotate-180');
+          });
+
+          // Open the target accordion
+          target.classList.remove('hidden');
+          const targetIcon = targetAccordion.querySelector('.accordion-icon');
+          if (targetIcon) {
+            targetIcon.classList.add('rotate-180');
+          }
+
+          // Smooth scroll to the accordion
+          targetAccordion.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        });
+      });
+    });
+  </script>
 </Layout>
